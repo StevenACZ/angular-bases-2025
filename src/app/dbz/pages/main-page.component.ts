@@ -19,4 +19,14 @@ export class MainPageComponent {
     { name: 'Jiren', power: 17000 },
     { name: 'Hit', power: 12500 },
   ];
+
+  // Add the new character to the list
+  onNewCharacter(character: Character): void {
+    this.characters.push(character);
+  }
+
+  // Delete the character from the list
+  onDeleteCharacter(index: number): void {
+    this.characters.splice(index, 1);
+  }
 }

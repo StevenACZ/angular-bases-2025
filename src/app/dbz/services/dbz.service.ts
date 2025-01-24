@@ -18,12 +18,12 @@ export class DbzService {
   ];
 
   // Add the new character to the list
-  onNewCharacter(character: Character): void {
+  addNewCharacter(character: Character): void {
     this.characters.push(character);
   }
 
   // Delete the character from the list
-  onDeleteCharacter(id: string): void {
+  deleteCharacter(id: string): void {
     this.characters = this.characters.filter(
       (character) => character.id !== id
     );

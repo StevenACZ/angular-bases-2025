@@ -20,8 +20,6 @@ export class DbzService {
   // Add the new character to the list
   onNewCharacter(character: Character): void {
     this.characters.push(character);
-
-    console.log(this.characters);
   }
 
   // Delete the character from the list

@@ -3,7 +3,7 @@ import { Component } from '@angular/core';
 @Component({
   selector: 'app-heros-hero',
   templateUrl: './hero.component.html',
-  styleUrls: ['./hero.component.css']
+  styleUrls: ['./hero.component.css'],
 })
 export class HeroComponent {
   public name: string = 'Ironman';
@@ -13,19 +13,23 @@ export class HeroComponent {
     return this.name.toUpperCase();
   }
 
-  getHeroDescription(): string {
+  get heroDescription(): string {
     return `${this.name} - ${this.age}`;
   }
 
   changeHero(name: string): void {
-    this.name = name;
+    if (name && name.trim()) {
+      this.name = name.trim();
+    }
   }
 
   changeAge(age: number): void {
-    this.age = age;
+    if (age && age > 0) {
+      this.age = age;
+    }
   }
 
-  resetForm():void {
+  resetForm(): void {
     this.name = 'Ironman';
     this.age = 45;
   }
